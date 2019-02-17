@@ -1,3 +1,7 @@
+# Manuel Marroquin
+# 2/17/19
+# Implementation of K++ centroid initialization from scratch for Boston Bombing tweet clustering
+
 import json
 import math
 import random
@@ -45,7 +49,7 @@ while(1):
 
 
 
-        # Check if this point is the furthest from its closest centroid we have seen
+        # Check if this tweet is the furthest from its respective centroid than those we have seen
 
         furthestCentDist = 1-jaccard_similarity(tweets[centroids[closestCentIndex]],tweets[tweetID])
         # If it is then we mark it as a potential new centroid

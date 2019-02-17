@@ -1,5 +1,13 @@
+# Manuel Marroquin
+# 2/17/2019
+# K-Means implementation from scratch to cluster Boston Marathon tweets using Jaccard Similarity
+
+
+
 import json
 import math
+
+
 
 def jaccard_similarity(x,y):
  
@@ -8,8 +16,7 @@ def jaccard_similarity(x,y):
     return intersection/float(union)
 
 
-
-
+numCentroids = 0
 tweets = {}
 newCentroids = []
 oldCentroids = []
@@ -18,8 +25,8 @@ clusters = {}
 # Get initial centroid IDs
 for line in centroidFile:
     oldCentroids.append(int(line.rstrip().rstrip(',')))
-
-
+    numCentroids+=1
+    
 newCentroids = oldCentroids
 
 
@@ -57,7 +64,7 @@ while(1):
     newCentroids = []
 
     # Calculate new centroid for each cluster by getting sum of distance to every other tweet in that cluster
-    for i in range(25):
+    for i in range(numCentroids):
         tweetIndex = 0
         minSumDist = 1000  # Arbitrary big num
         newCentroidIndex = -1
