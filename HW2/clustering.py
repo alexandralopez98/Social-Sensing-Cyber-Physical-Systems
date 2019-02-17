@@ -80,26 +80,17 @@ while(1):
 
     # If new and current old centroids are the same we are done
     if(newCentroids == oldCentroids):
-        print("True")
         break
     else:
-       print("Continue")
        oldCentroids = newCentroids
        newCentroids = []
 
 
 # When centroids have not changed anymore then we say clustering is done
+clusterID = 0
 for centroid in newCentroids:
-    print(" ")
-    print(str(centroid) + ": ")
-    for tweetID in clusters[centroid]:
-        print(str(tweetID) +": " + tweets[tweetID])
+    print(str(clusterID) + ": " +str(clusters[centroid]))
+    clusterID+=1
 
 
-print(1-jaccard_similarity(tweets[324219503401644033], tweets[324358798179459073]))
-print(1-jaccard_similarity(tweets[324219503401644033], tweets[323906399295926273]))
 
-324358798179459073
-323906399295926273
-
-324376801382133761
