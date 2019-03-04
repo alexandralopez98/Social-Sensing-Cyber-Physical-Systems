@@ -64,9 +64,9 @@ for id in sources:
 
 
 # Initialize theta
-A = range(numSources) 
-B = range(numSources)
-Z = range(numVars)
+A = list(range(numSources)) 
+B = list(range(numSources))
+Z = list(range(numVars))
 d = 0.5
 for i in range(numSources):
 	A[i] = calcS(i)
